@@ -1,1 +1,154 @@
 @import '~normalize.css/normalize.css';
+
+/*------------Color------------*/
+
+/*=============================*/
+
+
+/*------------Mixins-----------*/
+@mixin ui {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+@mixin reset-appearance {
+	-webkit-appearance: none;
+	 -moz-appearance: none;
+	 appearance: none;
+}
+
+@mixin brightness($value) {
+	-webkit-filter: brightness($value);
+	filter: brightness($value);
+}
+
+@mixin placeholder($color) {
+	&::-webkit-input-placeholder { color: $color; }
+	&::-moz-placeholder { color: $color; }
+	&:-ms-input-placeholder { color: $color; }
+	&:-moz-placeholder { color: $color; }
+}
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null, $margin: null) {
+	position: $position;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+	margin: $margin;
+}
+
+@mixin typography($family, $size, $weight, $line-height: null, $text-transform: null, $letter-spacing: null) {
+	font-family: $family;
+	font-size: $size;
+	font-weight: $weight;
+	line-height: $line-height;
+	text-transform: $text-transform;
+	letter-spacing: $letter-spacing;
+};
+/*=============================*/
+
+
+/*----------Typography---------*/
+body {
+	@include typography('Source Sans Pro', 20px, 300, 28px, null, 0.5px);
+
+	h1, h2, h3, h4, h5, h6, strong, p { margin: 0; }
+	// h1 { @include typography('Museo Slab Bold', 54px, 700, 54px, null, 2px); }
+	// h2 { @include typography('Museo Slab Bold', 36px, 700, 55px, null, 0.75px); }
+	// h3 { @include typography('Museo Slab Bold', 32px, 700, 38px, null, 0.5px); }
+	// h4 { @include typography('Museo Slab Bold', 24px, 700, 28px, null, 0.5px); }
+	// h5 { @include typography('Museo Slab Bold', 18px, 700, 24px, null, 0.5px); }
+
+	// label { @include typography('Museo Slab Bold', 18px, 400, 21px); }
+	// small, .small { @include typography('Source Sans Pro', 16px, 300, 24px, null, 0.5px); }
+}
+/*=============================*/
+
+
+/*----------Animations---------*/
+@keyframes marquee {
+	0% { transform: translateX(100vw); }
+	100% { transform: translateX(-100px); }
+}
+/*=============================*/
+
+
+/*------------Layout-----------*/
+html, body {
+	background: #0A0A0C;
+}
+
+header {
+	background: url('/assets/background.jpg') no-repeat center center;
+	background-size: cover;
+	overflow: hidden;
+}
+
+section {
+	padding: 5vw 0;
+	background: #0A0A0C;
+}
+
+.center-window {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	min-height: 100vh;
+	img#title {
+		max-width: 700px;
+		margin: 5vw auto 8vw;
+	}
+}
+/*=============================*/
+
+
+/*---------UI Elements---------*/
+* {
+	outline: none;
+	&:hover, &:active, &:focus {
+		outline: none !important;
+	}
+}
+
+a, button, .button, input[type="submit"], .interactive {
+	text-decoration: none;
+	cursor: pointer;
+	transition: all 0.3s;
+	&:hover {
+		@include brightness(75%);
+		text-decoration: none;
+	}
+}
+
+ul {
+	&.unstyled {
+		list-style-type: none;
+		padding: 0;
+	}
+	&.inline {
+		list-style-type: none;
+		li { display: inline-block; }
+	}
+}
+
+.marquee {
+	position: relative;
+	overflow: hidden;
+	border: 1px solid blue;
+	span {
+		display: inline-block;
+		// tranform: translateX(100%);
+		animation: marquee 10s linear infinite;
+		border: 1px solid orange;
+		&:hover { animation-play-state: paused; }
+	}
+}
+/*=============================*/
+
+
+/*--------Media Queries--------*/
+/*=============================*/
