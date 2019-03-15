@@ -68,17 +68,9 @@ body {
 /*=============================*/
 
 
-/*----------Animations---------*/
-@keyframes marquee {
-	0% { transform: translateX(100vw); }
-	100% { transform: translateX(-100px); }
-}
-/*=============================*/
-
-
 /*------------Layout-----------*/
 html, body {
-	background: #0A0A0C;
+	// background: #0A0A0C;
 }
 
 header {
@@ -135,18 +127,6 @@ ul {
 	}
 }
 
-.marquee {
-	position: relative;
-	overflow: hidden;
-	border: 1px solid blue;
-	span {
-		display: inline-block;
-		// tranform: translateX(100%);
-		animation: marquee 10s linear infinite;
-		border: 1px solid orange;
-		&:hover { animation-play-state: paused; }
-	}
-}
 /*=============================*/
 
 
