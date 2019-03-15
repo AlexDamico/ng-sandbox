@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 // Components
 import { HomeComponent } from './home/home.component';
 import { MarqueeComponent } from './castles/marquee/marquee.component';
+import { TimelineComponent } from './castles/timeline/timeline.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    MarqueeComponent
+    MarqueeComponent,
+    TimelineComponent
   ],
   imports: [
     BrowserModule,
