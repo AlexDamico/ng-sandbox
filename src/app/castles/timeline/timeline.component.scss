@@ -28,6 +28,8 @@
 			background: #333;
 			border-radius: 4px;
 			transition: all 0.3s;
+			clip-path: inset(0 -50px 0 -50px);
+
 			&:after {
 				content: '';
 				display: inline-block;
@@ -44,6 +46,7 @@
 					background: #333;
 					right: -50px;
 				}
+				&:hover { clip-path: inset(0 -50px 0 350px); }
 			}
 			&:nth-child(odd) {
 				transform: translateX(200px);
@@ -51,6 +54,7 @@
 					background: #333;
 					left: -50px;
 				}
+				&:hover { clip-path: inset(0 350px 0 -50px); }
 			}
 		}
 	}
