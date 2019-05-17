@@ -1,0 +1,66 @@
+@mixin truncate($width: null) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: $width;
+}
+
+@mixin truncateBlock($font-size, $line-height, $lines-to-show) {
+	display: block; /* Fallback for non-webkit */
+	display: -webkit-box;
+	// max-width: 400px;
+	height: $font-size*$line-height*$lines-to-show; /* Fallback for non-webkit */
+	margin: 0 auto;
+	font-size: $font-size;
+	line-height: $line-height;
+	-webkit-line-clamp: $lines-to-show;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+@mixin truncateFade($direction, $font-size, $line-height, $lines-to-show) {
+	position: relative;
+	display: block; /* Fallback for non-webkit */
+	display: -webkit-box;
+	// max-width: 400px;
+	height: $font-size*$line-height*$lines-to-show; /* Fallback for non-webkit */
+	margin: 0 auto;
+	font-size: $font-size;
+	line-height: $line-height;
+	-webkit-line-clamp: $lines-to-show;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		height: $font-size*$line-height*1;	
+	}
+
+	@if ($direction == 'vertical') {
+		&:after {
+			width: 100%;
+			background: linear-gradient(to bottom, transparent, white);
+		}
+	}
+	@if ($direction == 'horizontal') {
+		&:after {
+			width: 20%;
+			background: linear-gradient(to right, transparent, white);
+		}
+	}
+}
+
+.row { margin: 20px; }
+
+p {
+	&.truncate { @include truncate(90%); }
+	&.truncate-block { @include truncateBlock(16px, 1.4, 3); }
+	&.truncate-fade-horizontal { @include truncateFade('vertical', 16px, 1.4, 3); }
+	&.truncate-fade-vertical { @include truncateFade('horizontal', 16px, 1.4, 3); }
+}
