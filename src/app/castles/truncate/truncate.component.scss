@@ -44,6 +44,7 @@
 }
 
 p {
+	cursor: pointer;
 	&.truncate { @include truncate(90%); }
 	&.truncate-block { @include truncateBlock(16px, 1.4, 3); }
 	&.truncate-fade-vertical { @include truncateBlock(16px, 1.4, 3, 'vertical'); }
