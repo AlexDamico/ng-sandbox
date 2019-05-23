@@ -1,3 +1,4 @@
+// One-line Elipses
 @mixin truncate($width: null) {
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -5,26 +6,12 @@
 	width: $width;
 }
 
-@mixin truncateBlock($font-size, $line-height, $lines-to-show) {
-	display: block; /* Fallback for non-webkit */
-	display: -webkit-box;
-	// max-width: 400px;
-	height: $font-size*$line-height*$lines-to-show; /* Fallback for non-webkit */
-	margin: 0 auto;
-	font-size: $font-size;
-	line-height: $line-height;
-	-webkit-line-clamp: $lines-to-show;
-	-webkit-box-orient: vertical;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-@mixin truncateFade($direction, $font-size, $line-height, $lines-to-show) {
+// Multi-line Clip
+@mixin truncateBlock($font-size, $line-height, $lines-to-show, $direction: null) {
 	position: relative;
-	display: block; /* Fallback for non-webkit */
+	display: block;
 	display: -webkit-box;
-	// max-width: 400px;
-	height: $font-size*$line-height*$lines-to-show; /* Fallback for non-webkit */
+	height: $font-size*$line-height*$lines-to-show;
 	margin: 0 auto;
 	font-size: $font-size;
 	line-height: $line-height;
@@ -56,11 +43,9 @@
 	}
 }
 
-.row { margin: 20px; }
-
 p {
 	&.truncate { @include truncate(90%); }
 	&.truncate-block { @include truncateBlock(16px, 1.4, 3); }
-	&.truncate-fade-horizontal { @include truncateFade('vertical', 16px, 1.4, 3); }
-	&.truncate-fade-vertical { @include truncateFade('horizontal', 16px, 1.4, 3); }
+	&.truncate-fade-vertical { @include truncateBlock(16px, 1.4, 3, 'vertical'); }
+	&.truncate-fade-horizontal { @include truncateBlock(16px, 1.4, 3, 'horizontal'); }
 }
