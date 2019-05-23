@@ -6,7 +6,7 @@
 	width: $width;
 }
 
-// Multi-line Clip
+// Multi-line Clip (Ellispse, fade down, or fade out)
 @mixin truncateBlock($font-size, $line-height, $lines-to-show, $direction: null) {
 	position: relative;
 	display: block;
