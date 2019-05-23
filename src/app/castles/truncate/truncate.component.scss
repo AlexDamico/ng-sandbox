@@ -1,0 +1,52 @@
+// One-line Elipses
+@mixin truncate($width: null) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: $width;
+}
+
+// Multi-line Clip (Ellispse, fade down, or fade out)
+@mixin truncateBlock($font-size, $line-height, $lines-to-show, $direction: null) {
+	position: relative;
+	display: block;
+	display: -webkit-box;
+	height: $font-size*$line-height*$lines-to-show;
+	margin: 0 auto;
+	font-size: $font-size;
+	line-height: $line-height;
+	-webkit-line-clamp: $lines-to-show;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		height: $font-size*$line-height*1;	
+	}
+
+	@if ($direction == 'vertical') {
+		&:after {
+			width: 100%;
+			background: linear-gradient(to bottom, transparent, white);
+		}
+	}
+	@if ($direction == 'horizontal') {
+		&:after {
+			width: 20%;
+			background: linear-gradient(to right, transparent, white);
+		}
+	}
+}
+
+p {
+	cursor: pointer;
+	&.truncate { @include truncate(90%); }
+	&.truncate-block { @include truncateBlock(16px, 1.4, 3); }
+	&.truncate-fade-vertical { @include truncateBlock(16px, 1.4, 3, 'vertical'); }
+	&.truncate-fade-horizontal { @include truncateBlock(16px, 1.4, 3, 'horizontal'); }
+}
