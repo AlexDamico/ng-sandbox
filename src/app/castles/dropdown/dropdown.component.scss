@@ -1,0 +1,26 @@
+.dropdown {
+	position: relative;
+	display: flex;
+	width: fit-content;
+	border-bottom: 2px solid var(--info);
+	user-select: none;
+	cursor: pointer;
+	&::after {
+		content: '▼';
+		margin-left: 10px; 
+	}
+
+	ul.-menu {
+		position: absolute;
+		top: 100%;
+		list-style-type: none;
+		padding: 0;
+		width: 100%;
+		background: white;
+		border: 1px solid gray;
+		z-index: 1;
+		li {
+			width: max-content;
+		}
+	}
+}
