@@ -1,8 +1,8 @@
 <div class="container">
 	<h1>Dropdowns</h1>
-	
-	<div class="dropdown">
-		<div (click)="showMenu1 = !showMenu1">Default</div>
+
+	<div class="dropdown" (click)="showMenu1 = !showMenu1">
+		<div>Default</div>
 		<ul class="-menu" *ngIf="showMenu1">
 			<li>Option 1</li>
 			<li>Option 2</li>
