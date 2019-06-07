@@ -11,16 +11,36 @@
 	}
 
 	ul.-menu {
+		list-style-type: none;
 		position: absolute;
 		top: 100%;
-		list-style-type: none;
+		max-height: 150px;
+		width: max-content;
 		padding: 0;
-		width: 100%;
 		background: white;
 		border: 1px solid gray;
+		overflow: auto;
 		z-index: 1;
-		li {
+
+		label {
 			width: max-content;
+			margin: 0 10px 5px;
+			color: var(--gray);
+			font-size: 0.7em;
+			font-weight: bold;
+			text-transform: uppercase;
+			border-bottom: 2px solid var(--info);
+			pointer-events: none;
+			cursor: default;
+			&:not(:first-child) { margin-top: 15px; }
+		}
+
+		li {
+			width: 100%;
+			padding: 0 20px 0 10px;
+			background: white;
+			transition: all 0.3s;
+			&:hover { filter: brightness(85%); }
 		}
 	}
 }

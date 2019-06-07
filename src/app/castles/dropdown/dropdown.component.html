@@ -1,13 +1,36 @@
 <div class="container">
 	<h1>Dropdowns</h1>
 
-	<div class="dropdown" (click)="showMenu1 = !showMenu1">
-		<div>Default</div>
-		<ul class="-menu" *ngIf="showMenu1">
-			<li>Option 1</li>
-			<li>Option 2</li>
-			<li>Option 3</li>
-			<li>Option 4</li>
-		</ul>
-	</div>
+	<section>
+		<h2>Default</h2>
+		<div class="dropdown" (click)="showMenu1 = !showMenu1">
+			<div>Default</div>
+			<ul class="-menu" *ngIf="showMenu1">
+				<li>Option 1</li>
+				<li>Option 2</li>
+				<li>Option 3</li>
+				<li>Option 4</li>
+			</ul>
+		</div>
+	</section>
+
+	<section>
+		<h2>Labeled Dropdown</h2>
+		<div class="dropdown" (click)="showMenu2 = !showMenu2">
+			<div>Default</div>
+			<ul class="-menu" *ngIf="showMenu2">
+				<label>Options A</label>
+				<li>Option 1</li>
+				<li>Option 2</li>
+				<li>Option 3</li>
+				<li>Option 4</li>
+
+				<label>Options B</label>
+				<li>Option 5</li>
+				<li>Option 6</li>
+				<li>Option 7</li>
+				<li>Option 8</li>
+			</ul>
+		</div>
+	</section>
 </div>
