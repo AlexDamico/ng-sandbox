@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MarqueeComponent } from './castles/marquee/marquee.component';
 import { TruncateComponent } from './castles/truncate/truncate.component';
+import { DropdownComponent } from './castles/dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     MarqueeComponent,
-    TruncateComponent
+    TruncateComponent,
+    DropdownComponent
   ],
   imports: [
     BrowserModule,
