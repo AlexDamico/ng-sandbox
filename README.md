@@ -1,5 +1,7 @@
 # NgSandbox
 
+This project is a virtual workbench for testing out ideas for components and UI elements. It's meant solely for practice and reference material for potential use in actual future applications.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.
 
 ## Development server
