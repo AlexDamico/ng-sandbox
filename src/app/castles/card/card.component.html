@@ -16,7 +16,9 @@
 		</main>
 		<footer>
 			<button (click)="saved = !saved">Save</button>
-			<a (click)="hideDetails = !hideDetails">Details</a>
+			<a (click)="hideDetails = !hideDetails">
+				{{ hideDetails ? 'View' : 'Hide'}} details
+			</a>
 		</footer>
 	</div>
 </div>
