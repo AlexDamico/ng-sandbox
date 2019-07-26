@@ -1,4 +1,5 @@
 .mCard {
+	// Card container
 	max-width: 300px;
 	margin: auto;
 	border-radius: 5px;
@@ -29,6 +30,28 @@
 			object-fit: cover;
 			object-position: top;
 		}
+
+		.ribbon {
+			position: absolute;
+			top: 15px;
+			left: -25px;
+			width: 100px;
+			color: white;
+			font-size: 10px;
+			font-weight: bold;
+			text-align: center;
+			text-transform: uppercase;
+			background: mediumvioletred;
+			transform: rotate(-45deg);
+			transition: all 0.3s;
+
+			// Taper end
+			clip-path: polygon(100% 0%, 90% 50%, 100% 100%, 0 100%, 0% 50%, 0 0);
+			&.saved {
+				top: 85px;
+				left: -95px;
+			}
+		}
 	}
 
 	// Content padding
@@ -36,6 +59,7 @@
 		padding: 10px 15px;
 	}
 
+	// Card content
 	main {
 		position: relative;
 		height: 180px;

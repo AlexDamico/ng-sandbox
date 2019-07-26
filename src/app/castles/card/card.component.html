@@ -3,6 +3,7 @@
 
 	<div class="mCard">
 		<header>
+			<small class="ribbon" [ngClass]="{ 'saved': !saved }">Saved</small>
 			<small class="tag">Featured</small>
 			<img src="https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" alt="Image">
 		</header>
@@ -14,7 +15,7 @@
 			tempor incididunt ut labore et dolore magna aliqua.</p>
 		</main>
 		<footer>
-			<button>Save</button>
+			<button (click)="saved = !saved">Save</button>
 			<a (click)="hideDetails = !hideDetails">Details</a>
 		</footer>
 	</div>
