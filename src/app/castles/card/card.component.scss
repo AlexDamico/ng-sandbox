@@ -7,7 +7,20 @@
 
 	// Thumbnail
 	header {
+		position: relative;
 		height: 150px;
+
+		// Tag
+		.tag {
+			position: absolute;
+			top: 8px;
+			right: 7px;
+			padding: 2px 8px;
+			color: white;
+			background: #ffb907;
+			font-weight: 600;
+			border-radius: 500px;
+		}
 
 		// Fits the container (maintains aspect ratio)
 		img {
