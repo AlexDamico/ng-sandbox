@@ -25,7 +25,7 @@
 
 	main {
 		position: relative;
-		height: 150px;
+		height: 180px;
 		transition: all 350ms ease-in-out;
 		overflow: hidden;
 
@@ -59,6 +59,10 @@
 
 
 		// Basic Elements
+		small {
+			color: gray;
+			font-variant: small-caps;
+		}
 		h1 { font-size: 1.5em; }
 		hr {
 			width: 45px;
