@@ -5,7 +5,7 @@
 		<header>
 			<img src="https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" alt="Image">
 		</header>
-		<main>
+		<main [ngClass]="{ 'collapsed': hideDetails }">
 			<h1>Header</h1>
 			<hr>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -13,7 +13,7 @@
 		</main>
 		<footer>
 			<button>Buy</button>
-			<a>Details</a>
+			<a (click)="hideDetails = !hideDetails">Details</a>
 		</footer>
 	</div>
 </div>
