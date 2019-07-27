@@ -7,17 +7,19 @@ import { AppComponent } from './app.component';
 
 // Components
 import { HomeComponent } from './home/home.component';
+import { CardComponent } from './castles/card/card.component';
+import { DropdownComponent } from './castles/dropdown/dropdown.component';
 import { MarqueeComponent } from './castles/marquee/marquee.component';
 import { TruncateComponent } from './castles/truncate/truncate.component';
-import { DropdownComponent } from './castles/dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    CardComponent,
+    DropdownComponent,
     MarqueeComponent,
-    TruncateComponent,
-    DropdownComponent
+    TruncateComponent
   ],
   imports: [
     BrowserModule,
