@@ -34,6 +34,7 @@ $red: #cc3300;
 	font-weight: 500;
 	text-align: center;
 	border: none;
+	transition: all 0.3s;
 
 	// Hide input arrows
 	-moz-appearance: textfield;
@@ -59,19 +60,19 @@ button {
 	// Minus
 	&.decrement {
 		&:hover { background: $red; }
-		&:before { @include line($red); }
+		&::before { @include line($red); }
 	}
 
 	// Plus
 	&.increment {
 		&:hover { background: $green; }
-		&:before { @include line($green); }
-		&:after { @include line($green, 90deg); }
+		&::before { @include line($green); }
+		&::after { @include line($green, 90deg); }
 	}
 
 	// Shared hover props
 	&:hover {
 		filter: brightness(100%);
-		&:before, &:after { background: white; }
+		&::before, &::after { background: white; }
 	}
 }
