@@ -3,7 +3,10 @@
 
 	<div class="counter">
 		<button class="decrement" (click)="decrement()"></button>
-		<input type="number" class="count" name="count" value="{{count}}">
+		<div class="count-container">
+			<input type="number" class="count" name="count" value="{{count}}">
+			<div class="underline"></div>
+		</div>
 		<button class="increment" (click)="increment()"></button>
 	</div>
 </div>

@@ -1,5 +1,6 @@
-$green: #009933;
 $red: #cc3300;
+$green: #009933;
+$blue: #2a8fbd;
 
 // Generates +/- line(s)
 @mixin line($color, $rotation: null) {
@@ -13,7 +14,7 @@ $red: #cc3300;
 	transition: all 0.5s;
 }
 
-// Counter container
+// Counter
 .counter {
 	display: flex;
 	align-items: center;
@@ -24,11 +25,13 @@ $red: #cc3300;
 	background: white;
 	border-radius: 500px;
 	box-shadow: 3px 6px 10px 0 rgba(0, 0, 0, 0.1);
+
+	// Container
+	.counter-container { flex: 1; }
 }
 
 // Number
 .count {
-	flex: 1;
 	width: 50px;
 	color: gray;
 	font-weight: 500;
@@ -43,6 +46,19 @@ $red: #cc3300;
 		-webkit-appearance: none;
 		margin: 0;
 	}
+
+	// Activate underline on hover/focus
+	&:hover + .underline,
+	&:focus + .underline { width: 95%; }
+}
+
+// Animated input underline
+.underline {
+	width: 0;
+	height: 2px;
+	margin: 0 auto -2px;
+	background: $blue;
+	transition: all 0.3s ease-in-out;
 }
 
 // +/- buttons
