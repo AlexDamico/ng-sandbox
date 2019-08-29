@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 // Components
 import { HomeComponent } from './home/home.component';
 import { CardComponent } from './castles/card/card.component';
+import { CounterComponent } from './castles/counter/counter.component';
 import { DropdownComponent } from './castles/dropdown/dropdown.component';
 import { MarqueeComponent } from './castles/marquee/marquee.component';
 import { TruncateComponent } from './castles/truncate/truncate.component';
@@ -17,6 +18,7 @@ import { TruncateComponent } from './castles/truncate/truncate.component';
     AppComponent,
     HomeComponent,
     CardComponent,
+    CounterComponent,
     DropdownComponent,
     MarqueeComponent,
     TruncateComponent
