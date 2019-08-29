@@ -1,0 +1,94 @@
+$red: #cc3300;
+$green: #009933;
+$blue: #2a8fbd;
+
+// Generates +/- line(s)
+@mixin line($color, $rotation: null) {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 17px;
+	height: 2px;
+	background: $color;
+	transform: rotate($rotation);
+	transition: all 0.5s;
+}
+
+// Counter
+.counter {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: fit-content;
+	min-width: 130px;
+	padding: 5px;
+	background: white;
+	border-radius: 500px;
+	box-shadow: 3px 6px 10px 0 rgba(0, 0, 0, 0.1);
+
+	// Container
+	.counter-container { flex: 1; }
+}
+
+// Number
+.count {
+	width: 50px;
+	color: gray;
+	font-weight: 500;
+	text-align: center;
+	border: none;
+	transition: all 0.3s;
+
+	// Hide input arrows
+	-moz-appearance: textfield;
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	// Activate underline on hover/focus
+	&:hover + .underline,
+	&:focus + .underline { width: 95%; }
+}
+
+// Animated input underline
+.underline {
+	width: 0;
+	height: 2px;
+	margin: 0 auto -2px;
+	background: $blue;
+	transition: all 0.3s ease-in-out;
+}
+
+// +/- buttons
+button {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	border: none;
+	border-radius: 100%;
+	transition: all 0.5s;
+
+	// Minus
+	&.decrement {
+		&:hover { background: $red; }
+		&::before { @include line($red); }
+	}
+
+	// Plus
+	&.increment {
+		&:hover { background: $green; }
+		&::before { @include line($green); }
+		&::after { @include line($green, 90deg); }
+	}
+
+	// Shared hover props
+	&:hover {
+		filter: brightness(100%);
+		&::before, &::after { background: white; }
+	}
+}
