@@ -1,0 +1,64 @@
+$green: #009933;
+$red: #cc3300;
+
+// Generates +/- line(s)
+@mixin line($color, $rotation: null) {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 17px;
+	height: 2px;
+	background: $color;
+	transform: rotate($rotation);
+	transition: all 0.5s;
+}
+
+// Counter container
+.counter {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: fit-content;
+	min-width: 130px;
+	padding: 5px;
+	background: white;
+	border-radius: 500px;
+	box-shadow: 3px 6px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+// Number
+.count {
+
+}
+
+// +/- buttons
+button {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	border: none;
+	border-radius: 100%;
+	transition: all 0.5s;
+
+	// Minus
+	&.decrement {
+		&:hover { background: $red; }
+		&:before { @include line($red); }
+	}
+
+	// Plus
+	&.increment {
+		&:hover { background: $green; }
+		&:before { @include line($green); }
+		&:after { @include line($green, 90deg); }
+	}
+
+	// Shared hover props
+	&:hover {
+		filter: brightness(100%);
+		&:before, &:after { background: white; }
+	}
+}
