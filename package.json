@@ -24,7 +24,7 @@
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
     "jquery": "^3.5.0",
-    "lodash": "^4.17.14",
+    "lodash": "^4.17.19",
     "minimist": "^1.2.5",
     "normalize.css": "^8.0.1",
     "popper.js": "^1.15.0",
