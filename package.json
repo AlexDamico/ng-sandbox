@@ -33,6 +33,7 @@
     "serialize-javascript": "^3.1.0",
     "shelljs": "^0.8.3",
     "tslib": "^1.9.0",
+    "webpack-subresource-integrity": "^1.5.1",
     "yargs-parser": "^19.0.4",
     "zone.js": "~0.8.26"
   },
