@@ -26,6 +26,7 @@
     "jquery": "^3.5.0",
     "lodash": "^4.17.19",
     "minimist": "^1.2.5",
+    "normalize-url": "^4.5.1",
     "normalize.css": "^8.0.1",
     "object-path": "^0.11.5",
     "popper.js": "^1.15.0",
